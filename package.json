@@ -1,17 +1,19 @@
 {
-  "name": "vue",
+  "name": "vue-template",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "yaozu",
+  "author": "burgess",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "cross-env NODE_ENV=production node build/build.js",
+    "ready": "cross-env NODE_ENV=ready node build/build.js",
+    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
-    "less": "^3.8.1",
+    "axios": "^0.18.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -28,20 +30,24 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^5.0.3",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
+    "eslint-plugin-vuefix": "^0.2.1",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "less": "^3.9.0",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
@@ -58,8 +64,8 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": ">=3.1.11",
+    "webpack-bundle-analyzer": "^3.0.4",
+    "webpack-dev-server": "2.11.3",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
@@ -67,7 +73,7 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 2%",
+    "> 1%",
     "last 2 versions",
     "not ie <= 10"
   ]
