@@ -1,5 +1,6 @@
-
 import api from './base'
+import foods from '../mockdata.js'
+import { IS_INLINE } from '../settings'
 
 class ApiController {
   constructor (ops) {
@@ -14,8 +15,12 @@ class ApiController {
    * @return {[Object]}            返回请求响应
    */
   async getcode (postData = {}) {
-    let res = await api.post('send-mobile-code', postData, this.reqAuthorization)
-    return res
+    if (IS_INLINE) {
+      let res = await api.post('send-mobile-code', postData, this.reqAuthorization)
+      return res
+    } else {
+      return foods.data.foods
+    }
   }
 
   /**
