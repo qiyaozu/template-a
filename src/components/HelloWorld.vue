@@ -6,18 +6,18 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
-   methods: {
-    btn() {
-      this.pi()
+    name: 'HelloWorld',
+    props: {
+        msg: String
     },
-    pi () {
-      this.balabala()
+    methods: {
+        btn () {
+            this.pi()
+        },
+        pi () {
+            this.balabala()
+        }
     }
-  }
 }
 </script>
 
