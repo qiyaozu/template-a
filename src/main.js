@@ -1,14 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { fetchPost, fetchGet } from './api'
-import router from './router/router'
+import router from './router'
+import store from './store'
+import Toast from '@/plugins/toast'
+
+process.env.NODE_ENV === 'mock' && require('./mock')
+
+Vue.use(Toast)
 
 Vue.config.productionTip = false
-process.env.NODE_ENV === 'development' && require('./mock')
-Vue.prototype.fetchGet = fetchGet
-Vue.prototype.fetchPost = fetchPost
 
 new Vue({
-    router: router,
+    router,
+    store,
     render: h => h(App)
 }).$mount('#app')

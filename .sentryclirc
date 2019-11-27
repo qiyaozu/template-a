@@ -1,7 +1,0 @@
-[auth]
-token=25d724018b444073a67e16cc8eb55d79e701c6ea9f874d33a58daa34a7749d5e
-
-[defaults]
-url=http://127.0.0.1:9000
-project=javascript
-org=sentry
