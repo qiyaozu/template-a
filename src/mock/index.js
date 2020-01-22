@@ -5,10 +5,6 @@
 // https://github.com/nuysoft/Mock/wiki/Mock.setup()
 
 require('./home')
-require('./capital')
-require('./invite')
-require('./capitalRecord')
-require('./node')
 
 // 在这里可以做一些通用的配置
 const Mock = require('mockjs')
